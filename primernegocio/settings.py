@@ -138,3 +138,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 #ruta local donde la va encontrar, si no existe la creará
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+#APP 2: Se inicia agregando el Carrito
+CARRITO_SESSION_ID = 'carrito'
+
