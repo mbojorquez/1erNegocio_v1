@@ -24,6 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-t*0o$lv0win$@bgf3&06zpuae_kt2^m$yb*4o-9arm$3a1%t=m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#Muestra mensajes de error en el navegador, util en desarrollo. Colocar False durante producción.
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -132,3 +133,8 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#agregado: ruta a traves del cual el servidor tomará las imagenes o archivos multimedia
+MEDIA_URL = '/media/'
+#ruta local donde la va encontrar, si no existe la creará
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
