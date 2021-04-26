@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 #from django.http import HttpResponse
 from .models import Categoria, Producto
+from carrito.formulario import FormularioAgregarProducto
 
 
 # Create your views here.
@@ -27,5 +28,7 @@ def lista_productos(request, categoria_slug=None):
 def producto_detalle(request, id, slug):
     producto = get_object_or_404(Producto, id=id, 
                                     slug=slug, disponibilidad=True)
+    form_carrito_producto = FormularioAgregarProducto()
     return render(request, 'tienda/productos/detalles.html',
-                            {'producto': producto,})
+                            {'producto': producto,
+                             'form_carrito_producto': form_carrito_producto}) #se agrega esta linea al crear el carrito
