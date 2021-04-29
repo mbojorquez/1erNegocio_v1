@@ -3,7 +3,9 @@
 *.pot
 *.pyc
 __pycache__
-db.sqlite3
+
+#Una vez terminado la app ordenes comento la siguiente linea, para q la base de datos sea subida a git.
+#db.sqlite3
 media
 
 # Backup files # 
