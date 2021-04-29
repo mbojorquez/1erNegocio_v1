@@ -42,6 +42,12 @@ INSTALLED_APPS = [
     'nucleo',
     'tienda',
     'carrito',
+    'ordenes',
+    'crispy_forms',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -145,3 +151,21 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #APP 2: Se inicia agregando el Carrito
 CARRITO_SESSION_ID = 'carrito'
 
+#INDICAR QUE CRISPY FORMS UTILIZE BOOTSTRAP
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+###
+##ADICIONALES POST INSTALACION DE DJANGO-ALLAUTH
+AUTHENTICATION_BACKENDS = [
+    #Needed lo login by username in Django admin, regardless of 'allauth'
+    'django.contrib.auth.backends.ModelBackend',
+
+    #'allauth' specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login'
+LOGIN_REDIRECT_URL = '/'

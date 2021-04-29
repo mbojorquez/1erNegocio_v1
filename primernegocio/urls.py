@@ -21,6 +21,8 @@ urlpatterns = [
     path('', include('nucleo.urls', namespace='nucleo')),#agregando urls de la app nucleo
     path('tienda/', include('tienda.urls', namespace='tienda')),#agregando urls de la app tienda
     path('carrito/', include('carrito.urls', namespace='carrito')),#agregando carrito de compra
+    path('ordenes/', include('ordenes.urls', namespace='ordenes')),#agregando órdenes de compra
+    path('accounts/', include('allauth.urls')),
 ]
 
 from django.conf import settings
